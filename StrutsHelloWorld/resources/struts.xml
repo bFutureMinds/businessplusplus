@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	<constant name="struts.convention.action.suffix" value="Controller" />
+	<constant name="struts.convention.action.mapAllMatches" value="true" />
+	<constant name="struts.convention.default.parent.package"
+		value="rest-default" />
+	<constant name="struts.convention.package.locators" value="rest" />
+
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="login" class="net.viralpatel.struts2.LoginAction">
+			<result name="success">BusinessData.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+	</package>
+	<package name="default" namespace="/pie1" extends="jfreechart-default">
+
+		<action name="displayChart" class="net.viralpatel.struts2.JfreeChartAction">
+			<result name="success" type="chart">
+				<param name="value">chart</param>
+				<param name="type">jpeg</param>
+				<param name="width">600</param>
+				<param name="height">400</param>
+			</result>
+		</action>
+	</package>
+	<package name="pie1" namespace="/pie2" extends="jfreechart-default">
+		<action name="displayChart1" class="net.viralpatel.struts2.JfreeChartAction">
+			<result name="success" type="chart">
+				<param name="value">chart</param>
+				<param name="type">jpeg</param>
+				<param name="width">600</param>
+				<param name="height">400</param>
+			</result>
+		</action>
+	</package>
+	<package name="pie2" namespace="/pie3" extends="jfreechart-default">
+		<action name="displayChart2" class="net.viralpatel.struts2.JfreeChartAction">
+			<result name="success" type="chart">
+				<param name="value">chart</param>
+				<param name="type">jpeg</param>
+				<param name="width">600</param>
+				<param name="height">400</param>
+			</result>
+		</action>
+	</package>
+
+
+</struts>
